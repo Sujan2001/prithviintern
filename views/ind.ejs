@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+      <title></title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   </head>
+   <body>
+     <form class="" action="/payment/<%= name %>"method="post">
+       <input style="display:none;" type="text" name="email" value='<%= email %>'>
+       <input style="display:none;" type="text" name="source" value='<%= source %>'>
+       <input style="display:none;" type="text" name="price" value='<%= price %>'>
+       <input style="display:none;" type="text" name="desc" value='<%= desc %>'>
+       <input style="display:none;" type="text" name="find" value='<%= find %>'>
+       <input style="display:none;"  type="text" name="name" value="<%=name%>">
+       <input style="display:none;" class="city" type="text" name="city">
+       <input style="display:none;" class="country" type="text" name="country">
+        <input style="display:none;" class="continent" type="text" name="continent">
+         <input style="display:none;" class="state" type="text" name="state">
+          <input style="display:none;" class="postal" type="text" name="postal">
+
+       <input type="submit" name="" class="sub" value="Access Location">
+      </form>
+      <script>
+           $(document).ready(function(){
+             if (navigator.geolocation) {
+                 navigator.geolocation.getCurrentPosition(function(position){
+                   console.log(position.coords.latitude);
+                   console.log(position.coords.longitude);
+                    $.get( "https://api.opencagedata.com/geocode/v1/json?q="+position.coords.latitude+"+"+position.coords.longitude+"&key=c4a7b0c4d0a84e99b9ec08405e9f0fec", function(data) {
+                     console.log(data.results[0].components);
+                     $(".city").val(data.results[0].components.state_district);
+                     $(".country").val(data.results[0].components.country);
+                     $(".continent").val(data.results[0].components.continent);
+                     $(".state").val(data.results[0].components.state);
+                      $(".postal").val(data.results[0].components.postcode);
+                      console.log($(".city").val());
+                      console.log($(".country").val());
+                      console.log($(".continent").val());
+                      console.log($(".state").val());
+                      console.log($(".postal").val());
+                   });
+                 });
+
+             }
+          });
+   </script>
+   </body>
+ </html>

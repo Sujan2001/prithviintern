@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    html {
+  font-size: 62.5%; /* resets base font-size to 10px, which makes 'rems' easier to mentally calculate for the user */
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+header {
+  background-color:#606eb2;
+  min-height: 150px;
+  color: #ffffff;
+
+  position: relative;
+}
+
+header p:first-of-type {
+  margin: 0;
+  color: #222;
+  width: 200px;
+  margin-top: 7.5px;
+  position: absolute;
+  top: 100%;
+  right: 30px;
+}
+
+header::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.site-title {
+  max-width: 50%;
+
+  margin: 0 30px 0 30px;
+  font-size: 4.8rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.site-search {
+  max-width: 50%;
+
+  margin: 0 30px 0 30px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+
+}
+
+@media (max-width: 740px) {
+  header {
+      padding-bottom: 15px;
+  }
+
+  .site-search,
+  .site-title {
+    position: static;
+    transform: translateY(0);
+    display: block;
+    max-width: 100%;
+  }
+
+  .site-search {
+    border-top: 3px solid;
+    padding-top: 30px;
+  }
+}
+
+
+.site-search-hint {
+  display: block;
+  color: #cec4c4;
+  margin-bottom: 7.5px;
+  margin-top: 7.5px;
+}
+
+
+.form-control {
+  padding: 5px 4px 4px;
+  border: 2px solid #cec4c4;
+}
+
+.form-control + .button {
+  padding: 5px 4px 4px;
+  margin: 0;
+}
+.container {
+  margin-top: 30px;
+
+  width: 100%;
+}
+
+.navbar {
+  background-color:#606eb2;
+  width: 25%;
+
+}
+
+.content {
+  width: 75%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+
+  color: #FFFFFF;
+
+  text-decoration: none;
+
+  text-align: center;
+}
+
+a:hover {
+  background-color: #233172;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item:hover .nav-item-dropdown {
+  display: block;
+}
+
+.nav-item-dropdown {
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+  top: 0;
+  left: 100%;
+
+  width: 200px;
+  display: none;
+}
+
+.nav-item-dropdown a {
+  color: #222222;
+}
+
+.nav-item-dropdown a:hover {
+  background-color: #efefef;
+  text-decoration: underline;
+}
+  </style>
+  <body>
+    <header>
+  <h1 class="site-title">
+    Admin Panel
+  </h1>
+
+  <form action="/user" class="site-search">
+    <div class="form-group">
+      <label for="username" class="form-label">Search for user details
+        <span class="site-search-hint">
+          Enter the username in the box below; e.g. ab123
+        </span>
+      </label>
+      <input type="text" id="username" class="form-control">
+      <button id="site-search-trigger" class="button">Search</button>
+    </div>
+  </form>
+
+  <p>Hello, <span class="loggedin-user"></span></p>
+</header>
+
+<div class="container">
+
+  <div class="navbar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a href="/home">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/ul">Users List</a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/pl">Products List</a>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="content"></div>
+
+</div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="" style="position:relative;top:20%;left:30%; width: 500px; height:300px; background-color:#d7385e; box-shadow: 0 35px 67px 0 rgb(0 0 0), 0 4px 39px 0 rgba(0, 0, 0, 0.19);">
+      <h3 style="color:white; width:341px; font-size: 25px;position:absolute; top:10%; left:20%;">Welcome to Payment Gateway</h3> <br>
+     <form action="/locale/<%=name%>" method="post" style="left:40%;top:35%; position:absolute; ">
+       <input style="display:none;" type="text" name="price" value='<%= pprice %>'>
+       <input style="display:none;" type="text" name="desc" value='<%= pname %>'>
+        <input style="display:none;" type="text" name="find" value='<%= find %>'>
+        <input style="display:none;" type="text" name="name" value='<%= name %>'>
+       <script
+            src="//checkout.stripe.com/v2/checkout.js"
+          class="stripe-button"
+           data-key="<%= key %>"
+           data-amount="<%= pprice %>"
+           data-currency="inr"
+           data-name="<%= pseller %>"
+           data-description="<%= pname %>"
+            data-locale="auto" >
+           </script>
+     </form>
+
+
+
+    </div>
+
+  </body>
+</html>

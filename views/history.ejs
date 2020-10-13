@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <style media="screen">
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 100%/1.5 Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #fff;
+    background-color: #b6def2;
+    -webkit-font-smoothing: antialiased;
+}
+
+.promo {
+    margin: 6em auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.promo em {
+    font-family: Georgia, Times New Roman, serif;
+    display: inline-block;
+    background-color: #b6def2;
+    color: #194c66;
+    width: 4.5em;
+    height: 4.5em;
+    padding: 1.5em;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    margin: -1.5em -1em;
+}
+
+.butt {
+    padding: 1em 3em;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .75em;
+    line-height: 2;
+    display: inline-block;
+    letter-spacing: .1em;
+}
+
+.promo .butt {
+    min-width: 245px;
+}
+
+    .primary.butt {
+        background-color: #eb7966;
+        color: #fff;
+    }
+
+        .primary.butt:hover {
+            background-color: #d15a45;
+        }
+
+    .secondary.butt {
+        background-color: #194c66;
+        color: #fff;
+    }
+
+        .secondary.butt:hover {
+            background-color: #0b374d;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">E-Comm</a>
+
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="/sell">Sell Products</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link " href="/history">History</a>
+		      </li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		    </form>
+		  </div>
+		</nav>
+    <link href='https://fonts.googleapis.com/css?family=Lato:700italic,400,400italic,700' rel='stylesheet' type='text/css'>
+<div class=promo>
+    <a href="/slist/<%=name%>"  class="primary butt">Selling List</a> <em>or</em> <a href="/blist/<%=name%>" class="secondary butt">Buying List</a>
+</div>
+  </body>
+</html>
